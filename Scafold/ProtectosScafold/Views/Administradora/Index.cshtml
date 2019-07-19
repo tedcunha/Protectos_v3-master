@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Protectos.Application.ViewModels.Administradoras.AdministradoraViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <h2>Gestão Administradora</h2>
+</div>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Index", "Administradora", FormMethod.Get))
+        {
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBox("buscar", null, new { @class = "form-control input", @placeholder = "Pesquisar por nome" })
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn" type="submit">
+                            <small><i class="glyphicon glyphicon-search"></i></small>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-8">
+        <div>
+            <div class="pull-right">
+                <a href="@Url.Action("Create", "Administradora")" class="btn btn-primary">
+                    <span title="Detalhes" class="glyphicon glyphicon-plus-sign"></span> Novo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+<div class="panel panel-default">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RazaoSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InscricaoEstadual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Site)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RazaoSocial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnpj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InscricaoEstadual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Site)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Administradora", new {id = item.Id})" class="btn btn-warning btn-xs">
+                        <span title="Editar" class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a href="@Url.Action("Details", "Administradora", new {id = item.Id})" class="btn btn-primary btn-xs">
+                        <span title="Detalhes" class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <a href="@Url.Action("Delete", "Administradora", new {id = item.Id})" class="btn btn-danger btn-xs">
+                        <span title="Excluir" class="glyphicon glyphicon-trash"></span>
+                    </a>
+
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0379C7B9-A59E-4913-B97E-E9521F870629}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Protectos.Application</RootNamespace>
+    <AssemblyName>Protectos.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.8.1.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.5.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.5.2\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationServices\Administradoras\AdministradoraApplicationService.cs" />
+    <Compile Include="ApplicationServices\ApplicationService.cs" />
+    <Compile Include="ApplicationServices\Beneficiarios\BeneficiarioApplicationService.cs" />
+    <Compile Include="ApplicationServices\Clientes\ClienteApplicationService.cs" />
+    <Compile Include="ApplicationServices\Corretoras\CorretoraApplicationService.cs" />
+    <Compile Include="ApplicationServices\Entidades\EntidadeApplicationService.cs" />
+    <Compile Include="ApplicationServices\Faturas\FaturaApplicationService.cs" />
+    <Compile Include="ApplicationServices\Filiais\FilialApplicationService.cs" />
+    <Compile Include="ApplicationServices\Fornecedores\FornecedorApplicationService.cs" />
+    <Compile Include="ApplicationServices\Operadoras\OperadoraApplicationService.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Enums\EEstadoCivil.cs" />
+    <Compile Include="Enums\EFaturaPlanoTipo.cs" />
+    <Compile Include="Enums\EFormaPagamento.cs" />
+    <Compile Include="Enums\EParentesco.cs" />
+    <Compile Include="Enums\ESexo.cs" />
+    <Compile Include="Enums\EStatus.cs" />
+    <Compile Include="Enums\ETipoEmail.cs" />
+    <Compile Include="Enums\ETipoEmailEmpresa.cs" />
+    <Compile Include="Enums\ETipoTelefone.cs" />
+    <Compile Include="Enums\ETipoTelefoneEmpresa.cs" />
+    <Compile Include="Interfaces\Administradoras\IAdministradoraApplicationService.cs" />
+    <Compile Include="Interfaces\Beneficiarios\IBeneficiarioApplicationService.cs" />
+    <Compile Include="Interfaces\Clientes\IClienteApplicationService.cs" />
+    <Compile Include="Interfaces\Corretoras\ICorretoraApplicationService.cs" />
+    <Compile Include="Interfaces\Entidades\IEntidadeApplicationService.cs" />
+    <Compile Include="Interfaces\Fatura\IFaturaApplicationService.cs" />
+    <Compile Include="Interfaces\Filiais\IFilialApplicationService.cs" />
+    <Compile Include="Interfaces\Fornecedores\IFornecedorApplicationService.cs" />
+    <Compile Include="Interfaces\Operadoras\IOperadoraApplicationService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraEmailViewModel.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Administradoras\AdministradoraViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioDependenteViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioEmailViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Beneficiarios\BeneficiarioViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteEmailViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Clientes\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\Configuracoes\RelacaoFaturaPlanoViewModel.cs" />
+    <Compile Include="ViewModels\Configuracoes\RelacaoOperadoraEntidadeViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraEmailViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Corretoras\CorretoraViewModel.cs" />
+    <Compile Include="ViewModels\Entidades\EntidadeCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Entidades\EntidadeEmailViewModel.cs" />
+    <Compile Include="ViewModels\Entidades\EntidadeEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Entidades\EntidadeTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Entidades\EntidadeViewModel.cs" />
+    <Compile Include="ViewModels\Faturas\FaturaViewModel.cs" />
+    <Compile Include="ViewModels\Filiais\FilialCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Filiais\FilialEmailViewModel.cs" />
+    <Compile Include="ViewModels\Filiais\FilialEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Filiais\FilialTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Filiais\FilialViewModel.cs" />
+    <Compile Include="ViewModels\Fornecedores\FornecedorCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Fornecedores\FornecedorEmailViewModel.cs" />
+    <Compile Include="ViewModels\Fornecedores\FornecedorEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Fornecedores\FornecedorTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Fornecedores\FornecedorViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraCadastroViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraEmailViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraEnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraTelefoneViewModel.cs" />
+    <Compile Include="ViewModels\Operadoras\OperadoraViewModel.cs" />
+    <Compile Include="ViewModels\Planos\PlanoViewModel.cs" />
+    <Compile Include="ViewModels\Propostas\PropostaViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Protectos.Domain.Core\Protectos.Domain.Core.csproj">
+      <Project>{5a548c53-282e-47c4-8a11-4517bae41fcb}</Project>
+      <Name>Protectos.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protectos.Domain\Protectos.Domain.csproj">
+      <Project>{a4d67b2c-9f59-4d2f-a109-f82c4b338736}</Project>
+      <Name>Protectos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.CrossCutting.MvcFilters\Protectos.Infra.CrossCutting.MvcFilters.csproj">
+      <Project>{FF56073C-4223-4EDC-85AD-680664BC446E}</Project>
+      <Name>Protectos.Infra.CrossCutting.MvcFilters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protectos.Infra.Data\Protectos.Infra.Data.csproj">
+      <Project>{955272fd-2b5a-4e65-8594-59c3d3b9ab7c}</Project>
+      <Name>Protectos.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
